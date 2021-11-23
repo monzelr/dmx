@@ -22,6 +22,7 @@ class TestDMX(unittest.TestCase):
         :return:
         """
 
+
     def setUp(self):
         """Set up test fixtures, if any."""
 
@@ -30,7 +31,7 @@ class TestDMX(unittest.TestCase):
         """Tear down test fixtures, if any."""
         cls.disconnect()
 
-    def test_nothing(self):
+    def test_DMX_(self):
         """Test dmx with numpy array"""
         pass
 

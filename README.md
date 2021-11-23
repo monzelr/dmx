@@ -18,13 +18,18 @@ Should also work on Linux, MacOS and on AARCH64 devices (ARM devices like Raspbe
 
 Installation
 ------------
-Make sure to have git, python and pip in your environment path or activate your python environment before this code snippet:
+Make sure to have git, python and pip in your environment path or activate your python environment.\
+To install enter in cmd/shell:
 
     git clone https://github.com/monzelr/dmx.git
 
     cd dmx
 
-    pip install dmx
+    pip install .
+
+Alternative with python:
+
+    python setup.py install
 
 Example Code Snippets
 ---------------------
