@@ -108,7 +108,7 @@ class DMX(object):
             for known_device in DEVICE_LIST:
                 if device.vid == known_device.vid and device.pid == known_device.pid and serial_number == "":
                     try:
-                        s = serial.Serial(device.name)
+                        s = serial.Serial(device.device)
                         s.close()
                     except (OSError, serial.SerialException):
                         pass
@@ -119,7 +119,7 @@ class DMX(object):
                 elif device.vid == known_device.vid and device.pid == known_device.pid and \
                         serial_number == device.serial_number:
                     try:
-                        s = serial.Serial(device.name)
+                        s = serial.Serial(device.device)
                         s.close()
                         del s
                     except (OSError, serial.SerialException) as error:
@@ -140,7 +140,7 @@ class DMX(object):
             self.start_byte = np.array([0x7E, 0x06, 0x01, 0x02, 0x00], np.uint8)
             self.end_byte = np.array([0xE7], np.uint8)
             self.num_of_channels = num_of_channels
-            self.ser = serial.Serial(self.device.name,
+            self.ser = serial.Serial(self.device.device,
                                      baudrate=250000,
                                      parity=serial.PARITY_NONE,
                                      bytesize=serial.EIGHTBITS,
@@ -150,7 +150,7 @@ class DMX(object):
             self.start_byte = np.array([0x00], np.uint8)
             self.end_byte = np.array([], np.uint8)
             self.num_of_channels = num_of_channels
-            self.ser = serial.Serial(self.device.name,
+            self.ser = serial.Serial(self.device.device,
                                      baudrate=250000,
                                      parity=serial.PARITY_NONE,
                                      bytesize=serial.EIGHTBITS,
