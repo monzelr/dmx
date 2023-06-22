@@ -8,7 +8,7 @@ from dmx.dmx import sleep_us
 
 __author__ = 'Rune Monzel'
 __email__ = 'runemonzel@googlemail.com'
-__version__ = '0.2.1'
+__version__ = '0.2.2'
 __all__ = ['DMX',
            'logger',
            'Device',
