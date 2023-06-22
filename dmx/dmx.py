@@ -156,6 +156,7 @@ class DMX(object):
                                      bytesize=serial.EIGHTBITS,
                                      stopbits=serial.STOPBITS_TWO
                                      )
+                    # self.send()  # make sure it has been send
 
     @property
     def num_of_channels(self) -> int:
@@ -243,7 +244,6 @@ class DMX(object):
                     self.num_of_channels = 512
                     self.data = np.zeros([self.num_of_channels], np.uint8)
                     self.send()
-                    # self.send()  # make sure it has been send
                 print("close serial port")
                 self.ser.close()
 
