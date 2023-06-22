@@ -228,6 +228,7 @@ class DMX(object):
         """
         data = np.concatenate((self.start_byte, self.data, self.end_byte)).tobytes()
         self.ser.write(data)
+        self.ser.flush()
 
     def __del__(self) -> None:
         """
@@ -242,7 +243,7 @@ class DMX(object):
                     self.num_of_channels = 512
                     self.data = np.zeros([self.num_of_channels], np.uint8)
                     self.send()
-                    self.send()  # make sure it has been send
+                    # self.send()  # make sure it has been send
                 print("close serial port")
                 self.ser.close()
 
