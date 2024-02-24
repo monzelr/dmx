@@ -48,7 +48,6 @@ def find_version_author_email(*file_paths):
 version, author, author_email = find_version_author_email('dmx', '__init__.py')
 
 # this is only necessary when not using setuptools/distribute
-from sphinx.setup_command import BuildDoc
 
 requirements = ["numpy>=1.13.0",
                 "pyserial>=3.2"]
@@ -90,18 +89,11 @@ setup(
     keywords=keywords,
     name=name,
     packages=['dmx'],
-    cmdclass={'build_sphinx': BuildDoc},
     test_suite=test_suite,
     tests_require=test_requirements,
     url=url,
     license="BSD 3-Clause License",
     version=version,
     zip_safe=zip_safe,
-    command_options = {
-                      'build_sphinx': {
-                          'project': ('setup.py', name),
-                          'version': ('setup.py', version),
-                          'release': ('setup.py', version),
-                          'source_dir': ('setup.py', 'documentation')}}
 )
 
